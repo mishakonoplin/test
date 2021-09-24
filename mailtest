@@ -1,0 +1,45 @@
+def integer_test():
+    assert type(1) == int
+
+
+def integer_test_2():
+    check = False
+    try:
+        1 / 1
+        if type(1) != float:
+            check = True
+    except:
+        pass
+    assert check == True
+
+
+def integer_test_3():
+    try:
+        '1'.append(2)
+    except:
+        pass
+
+
+def list_test():
+    assert type([1]) == list
+
+
+def list_test_2():
+    assert isinstance([1], list) == True
+
+
+def list_test_3(test_list, max_lenght):  ### Проверка на максимальное количество значений в массиве
+    error_check = False
+    if type(test_list) == list and len(test_list) <= max_lenght:
+        error_check = True
+    assert error_check == True
+
+
+if __name__ == '__main__':
+    integer_test()
+    integer_test_2()
+    integer_test_3()
+
+    list_test()
+    list_test_2()
+    list_test_3([1, 2, 3], 3)
